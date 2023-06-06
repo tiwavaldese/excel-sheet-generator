@@ -9,7 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
     <div class="form">
@@ -17,8 +20,8 @@
         <input type="number" class="rows" placeholder="Enter number of rows">
         <input type="number" class="columns" placeholder="Enter number of columns">
         <div class="btns">
-            <button onclick="generateTable()">Generate</button>
-            <button onclick="ExportToExcel('xlsx')">Export</button>
+            <button onclick="generateTable()" id="generate">Generate</button>
+            <button onclick="ExportToExcel('xlsx')" id="export">Export</button>
         </div>
     </div>
     <div class="table">
@@ -26,14 +29,57 @@
             <tbody class="sheet-body"></tbody>
         </table>
     </div>
-    <script> 
-        swal("the fields are empty")
-        .then((response)=>{
-    swal("are you sure you want to generate?")
-        });
-        </script>
+    
+    <script>
+        $('#generate').click(function(){
+           let row = $(".rows").val();
+           let column = $(".columns").val();
+
+           if(row == '' || column ==''){
+            swal({
+        icon: "warning",
+        title: "Fields Empty!",
+        text: "Please check the missing fields",
+       button: "ok",
+    })
+           }
+            })
+       
         
+        </script>
+
+<script>
+    $('#export').click(function(){
+     
+        let generate = $("#generate").val();
+       if(generate == '' ){
+        swal({
+    icon: "warning",
+    title: "Button Empty!",
+    text: "Please check the button",
+   button: "ok",
+})
+       }
+        })
+   
+    
+    </script>  
 </body>
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 <script src="./script.js"></script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
