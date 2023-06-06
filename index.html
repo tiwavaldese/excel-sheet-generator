@@ -27,10 +27,12 @@
         </table>
     </div>
     <script> 
-    swal("the fields are empty",{
-        button: "generate",
-    });
-    </script>
+        swal("the fields are empty")
+        .then((response)=>{
+    swal("are you sure you want to generate?")
+        });
+        </script>
+        
 </body>
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 <script src="./script.js"></script>
