@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 </head>
 <body>
     <div class="form">
@@ -25,6 +26,11 @@
             <tbody class="sheet-body"></tbody>
         </table>
     </div>
+    <script> 
+    swal("the fields are empty",{
+        button: "generate",
+    });
+    </script>
 </body>
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 <script src="./script.js"></script>
