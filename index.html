@@ -38,10 +38,12 @@
            if(row == '' || column ==''){
             swal({
         icon: "warning",
-        title: "Fields Empty!",
-        text: "Please check the missing fields",
+        title: "Fields are empty!",
        button: "ok",
     })
+    .then((response) => {
+    swal("Please check the missing fields")
+})
            }
             })
        
@@ -56,8 +58,10 @@
         swal({
     icon: "warning",
     title: "Button Empty!",
-    text: "Please check the button",
    button: "ok",
+})
+.then((response) => {
+    swal("Please check the button")
 })
        }
         })
